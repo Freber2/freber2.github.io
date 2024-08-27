@@ -15,41 +15,76 @@
   </script>
 </head>
 <body>
-    <header class="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
+    <header class="sticky top-0 z-30">
+        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                    </li>
+                    <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
         <div class="relative z-30 p-5 text-8xl text-white rounded-xl">
-          Xref
+            Xref
         </div>
-        <video autoplay loop muted class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4" type="video/mp4" />Your browser does not support the video tag.
+        <video autoplay loop muted class="absolute w-auto min-w-full min-h-full max-w-none">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4" type="video/mp4" />Your browser does not support the video tag.
         </video>
-      </header>
-      <div class="max-w-lg m-auto">
-        <p class="mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat a
-          magna non varius. Proin leo felis, euismod non porta eget, varius sit amet
-          sapien. Maecenas in nulla at leo convallis consectetur id a sapien. Nulla
-          nec pulvinar nisi. Vivamus non facilisis lacus, et volutpat libero. Nulla ac
-          odio aliquam, accumsan arcu ut, lacinia est. Nulla eu sem elit. Fusce nec
-          laoreet sem, semper molestie libero.
-        </p>
-        <p class="mb-4">
-          Ut sagittis lacus consequat accumsan venenatis. Sed sollicitudin, lectus et
-          fringilla ultrices, dolor nisi scelerisque tortor, vel finibus magna massa
-          non nunc. Phasellus massa quam, egestas a nisl sed, porta volutpat metus.
-          Nunc sed elit ac tellus tempor cursus. Suspendisse potenti. Vestibulum
-          varius rutrum nisl nec consequat. Suspendisse semper dignissim sem viverra
-          semper. Nulla porttitor, purus nec accumsan pharetra, nisi dolor condimentum
-          ipsum, id consequat nulla nunc in ligula.
-        </p>
-        <p class="mb-12">
-          Nulla pharetra lacinia nisi, vitae mollis tellus euismod id. Mauris porta
-          dignissim hendrerit. Cras id velit varius, fermentum lectus vitae, ultricies
-          dolor. In bibendum rhoncus purus vel rutrum. Nam vulputate imperdiet
-          fringilla. Donec blandit libero massa. Suspendisse dictum diam mauris, vitae
-          fermentum dolor tincidunt in. Pellentesque sollicitudin venenatis dolor,
-          vitae scelerisque elit ultrices eu. Donec eget sodales risus, quis dignissim
-          neque.
-        </p>
-      </div>
+    </div>
+    <div class="max-w-lg m-auto">
+    <p class="mb-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat a
+        magna non varius. Proin leo felis, euismod non porta eget, varius sit amet
+        sapien. Maecenas in nulla at leo convallis consectetur id a sapien. Nulla
+        nec pulvinar nisi. Vivamus non facilisis lacus, et volutpat libero. Nulla ac
+        odio aliquam, accumsan arcu ut, lacinia est. Nulla eu sem elit. Fusce nec
+        laoreet sem, semper molestie libero.
+    </p>
+    <p class="mb-4">
+        Ut sagittis lacus consequat accumsan venenatis. Sed sollicitudin, lectus et
+        fringilla ultrices, dolor nisi scelerisque tortor, vel finibus magna massa
+        non nunc. Phasellus massa quam, egestas a nisl sed, porta volutpat metus.
+        Nunc sed elit ac tellus tempor cursus. Suspendisse potenti. Vestibulum
+        varius rutrum nisl nec consequat. Suspendisse semper dignissim sem viverra
+        semper. Nulla porttitor, purus nec accumsan pharetra, nisi dolor condimentum
+        ipsum, id consequat nulla nunc in ligula.
+    </p>
+    <p class="mb-12">
+        Nulla pharetra lacinia nisi, vitae mollis tellus euismod id. Mauris porta
+        dignissim hendrerit. Cras id velit varius, fermentum lectus vitae, ultricies
+        dolor. In bibendum rhoncus purus vel rutrum. Nam vulputate imperdiet
+        fringilla. Donec blandit libero massa. Suspendisse dictum diam mauris, vitae
+        fermentum dolor tincidunt in. Pellentesque sollicitudin venenatis dolor,
+        vitae scelerisque elit ultrices eu. Donec eget sodales risus, quis dignissim
+        neque.
+    </p>
+    </div>
 </body>
 </html>
