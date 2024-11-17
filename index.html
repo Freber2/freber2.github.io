@@ -1,151 +1,710 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="sv">
 <head>
-    <title>XREF</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta charset="UTF-8">
+    <title>Xref</title>
+
+    <meta name="description" content="Xref description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-        theme: {
-            fontFamily: {
-                'sans': ['Oswald']
-            }
-        }
-        }
-    </script>
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono:400%7COswald:700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css?">
+    <script src="js/script.js"></script>
+
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
-<body>
-    <header class="sticky top-0 z-30">
-        <nav class="bg-white border-gray-200">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="https://xref.se/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="/images/xref.png" class="h-8" alt="Xref Logo" />
-                </a>
-                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                    </svg>
-                </button>
-                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-                    <li>
-                        <a href="#start" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0" aria-current="page">Start</a>
-                    </li>
-                    <li>
-                        <a href="#kunder" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Våra kunder</a>
-                    </li>
-                    <li>
-                        <a href="#omoss" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Om oss</a>
-                    </li>
-                </ul>
-                </div>
+
+<body class="preloader-running">
+    <div id="preloader">
+        <div class="preloader-progress">
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <div class="menu">
+        <div class="anchor-menu">
+            <a class="anchor-menu-item nav-link" href="#projekt">Projekt</a>
+            <a class="anchor-menu-item nav-link" href="#omoss">Om oss</a>
+            <a class="anchor-menu-item nav-link" href="#kontakt">Kontakt</a>
+        </div>
+
+        <div class="icon-logo"></div>
+        <h2 class="menu-text menu-text-left hidden-xs">Xref</h2>
+        <h2 class="menu-text menu-text-right hidden-xs">Adress 11b
+            <span class="bullet-divider"></span> 111 11 Stockholm
+            <span class="bullet-divider"></span> <a href="tel:08000000" class="phone">08 00 00 00</a>
+        </h2>
+        <div class="social hidden-xs">
+            <a href="https://se.linkedin.com/company/xref" 
+               class="icon-social icon-social-linkedin"
+               target="_blank"></a>
+            <a href="https://www.facebook.com/xref/" 
+               class="icon-social icon-social-facebook"
+               target="_blank"></a>
+            <a href="https://www.instagram.com/xref/" 
+               class="icon-social icon-social-instagram"
+               target="_blank"></a>
+        </div>
+    </div>
+
+    <div class="scroll-down hidden-xs">
+        <a href="#intro" class="scroll-down-link">
+            <span class="glyphicon glyphicon-triangle-bottom scroll-down-animation"></span>
+        </a>
+    </div>
+
+    <div class="frames">
+        <div class="frame-top"></div>
+        <div class="frame-right hidden-xs"></div>
+        <div class="frame-bottom hidden-xs"></div>
+        <div class="frame-left hidden-xs"></div>
+        <div class="logo-frame"></div>
+    </div>
+
+    <!-- INTRO -->
+    <section class="hero">
+
+        <div class="container-centered" data-coversize>
+            <h1 class="intro-header">Xref</h1>
+        </div>
+
+        <div id="intro" class="container-centered" data-coversize>
+            <div>
+                <h1 class="intro-header"><span class="outlined">Lorem ipsum<br>dolor sit amet</span><br>consectetur  <br> adipiscing elit.</h1>
+                <p class="case-body-text" style="max-width: 440px; margin: 30px auto; font-size:14px;">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
             </div>
-        </nav>
-    </header>
-    <section id="start">
-        <div class="relative flex items-center justify-center h-screen overflow-hidden">
-            <div class="relative z-20 p-5 text-8xl text-white rounded-xl">
-                <img src="/images/xref8x.png" class="h-48" alt="Big Xref Logo" />
-            </div>
-            <video autoplay loop muted class="absolute w-auto min-w-full min-h-full max-w-none">
-                <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4" />Your browser does not support the video tag.
+        </div>
+
+        <div style="height:200px; width: 100%"></div>
+
+        <div class="video-container" data-coversize>
+            <!--<div class="video-fallback hidden-sm hidden-md hidden-lg" style="background-image: url('assets/hero.jpg')"></div> -->
+            <video muted="" id="hero-video" class="video-element" loop="" poster="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" playsinline>
+                <source src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4" type="video/mp4">
             </video>
         </div>
+
     </section>
-    <section id="vardeord">
-        <div class="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-sky-900">
-            <div class="relative z-20 p-5 text-6xl text-white">
-                Våra värdeord
+
+    <!-- CASES -->
+    <section class="container-fluid grid">
+        <div id="projekt" style="position:relative;top:-80px;"></div>
+        <div class="row">
+
+            <!-- RIGHT COLUMN-->
+            <div class="col-sm-6 col-sm-push-6 grid-col layout-offset border-top">
+
+                <div class="cell cell-type-big">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-vasterled-1"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-landscape hidden-xs">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="more-info container-centered">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#vasterled" class="permalink">Västerled</a></h3>
+                                    <p class="show-info-text">Betongstomme med garageinfart.</p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-vasterled-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content show-info">
+                        <div class="case-img-container">
+                            <div class="more-info container-centered">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#kulturladan" class="permalink">Kulturladan</a></h3>
+                                    <p class="show-info-text"></p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-kulturladan-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img case-img-kulturladan-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="umami" class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-umami-4"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img case-img-riggen-3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content show-info">
+                        <div class="case-img-container">
+                            <div class="more-info container-centered">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#umami" class="permalink">Riggen</a></h3>
+                                    <p class="show-info-text">Loftgångar och träfasad</p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-riggen-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="nacka-strand" class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-nackastrand"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="slakthuset" class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-slakthuset-1"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="johannes-kyrka" class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-johannes-2023"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="vaxtvaggen" class="cell cell-type-big">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="more-info container-centered push-bottom">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#vaxtvaggen" class="permalink">Växtväggen</a></h3>
+                                    <p class="show-info-text">Stålstomme till Stockholms första utomhusväxtvägg i hörnet av Mäster Samulesgatan och Drottninggatan.</p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-greenwall"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="abbamuseet" class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="more-info container-centered">
+                                
+                            </div>
+                            <div class="case-img case-img-abba-1"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="relative z-20 p-5 text-3xl text-white">
-                "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+
+            <!-- LEFT COLUMN-->
+            <div class="col-sm-6 col-sm-pull-6 grid-col border-top">
+
+                <div class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-arsta-kulle-1"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img case-img-arsta-kulle-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content show-info">
+                        <div class="case-img-container">
+                            <div class="more-info container-centered">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#arsta-kulle" class="permalink">Årsta Kulle</a></h3>
+                                    <p class="show-info-text"></p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-arsta-kulle-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-kulturladan-1"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img case-img-umami-3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content show-info">
+                        <div class="case-img-container">
+                            <div class="more-info container-centered">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#umami" class="permalink">Umami</a></h3>
+                                    <p class="show-info-text">Bärande stommar målade som en del av konstprojektet Umami 5th taste of art.</p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-umami-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="riggen" class="cell cell-type-big">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-riggen"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="strand-hotell" class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="more-info container-centered push-bottom">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#strand-hotell" class="permalink">Strand Hotell</a></h3>
+                                    <p class="show-info-text">Pågående projekt</p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-strand"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="graphic-frame"></div>
+                    <div class="cell-content show-info">
+                        <div class="case-img-container">
+                            <div class="more-info container-centered">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#slakthuset" class="permalink">Slakthuset</a></h3>
+                                    <p class="show-info-text">Förstärkning av befintliga balkar</p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-slakthuset-3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img case-img-slakthuset-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hogalid" class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-hogalid"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="fisksatra" class="cell cell-type-featured">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="project-info">
+                                <p><a href="#" class="project-info-label">Beställare</a> Cras aliquam</p>
+                                <p><a href="#" class="project-info-label">Arkitekt</a> Ornare justo</p>
+                                <p><a href="#" class="project-info-label">Utmaning</a> Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero.</p>
+                            </div>
+                            <div class="case-img case-img-fisksatra"></div>
+                        </div>
+                        <div class="case-info">
+                            <div class="case-info-wrapper">
+                                <h2 class="case-header-text"><a href="#vasterled" class="permalink">Cras aliquam</a></h2>
+                                <p class="case-body-text">
+                                    Cras aliquam ornare justo, sed vestibulum nisi suscipit vel. Etiam mollis elit a viverra posuere. Quisque nec pharetra leo. Donec quam nibh, consequat eget tellus sit amet, ornare finibus libero. Ut turpis arcu, tincidunt ut eleifend sit amet, faucibus in eros. Curabitur non ornare ligula, non malesuada turpis. Vestibulum molestie justo enim, tincidunt egestas augue cursus eget. Duis eget elit tortor. Proin non sollicitudin felis, eu cursus urna. Nunc sit amet nibh odio. Nulla condimentum lacus metus, eget imperdiet leo auctor eu. Donec condimentum dictum massa non euismod. Morbi viverra, nulla eu auctor faucibus, nunc ante finibus arcu, ut pretium felis orci lacinia tellus. Quisque sit amet consequat diam. Integer auctor elit velit, vel fermentum nisi vulputate ac.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img case-img-fisksatra-3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell cell-type-small hidden-xs">
+                    <div class="cell-content show-info">
+                        <div class="case-img-container">
+                            <div class="more-info container-centered">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#umami" class="permalink">Fisksätra</a></h3>
+                                    <p class="show-info-text">Stålstomme för dubbelkrökt glasyta</p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-fisksatra-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-big hidden-xs">
+                    <div class="cell-content show-info" data-mobilehover>
+                        <div class="case-img-container">
+                            <div class="more-info container-centered">
+                                <div>
+                                    <h3 class="show-info-header"><a href="#abbamuseet" class="permalink">Abbamuseet</a></h3>
+                                    <p class="show-info-text">Knutpunkt med bärande glasbalkar.</p>
+                                </div>
+                            </div>
+                            <div class="case-img case-img-abba-2"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-    <section id="kunder">
-        <div class="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-sky-950">
-            <div class="relative z-20 p-5 text-6xl text-white">
-                Våra kunder
+
+    <!-- ABOUT -->
+    <section id="omoss" class="container-fluid section grid">
+        <div class="row section-header-row">
+            <div class="col-sm-2 col-md-3 hidden-xs">
+                <div class="header-img header-img-1"></div>
             </div>
-            <div class="flex flex-row text-white">
-                <div class="h-60 w-80 m-20 hover:scale-105">
-                    <a href="#">
-                        <img class="object-cover h-full w-full " src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8">
-                        <div class="flex flex-col items-center justify-center">
-                            <div class="text-2xl text-white">
-                                Lorem Ipsum
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="h-60 w-80 m-20 hover:scale-105">
-                    <a href="#">
-                        <img class="object-cover h-full w-full " src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8">
-                        <div class="flex flex-col items-center justify-center">
-                            <div class="text-2xl text-white">
-                                Lorem Ipsum
-                            </div>
-                        </div>
-                    </a>
+            <div class="col-sm-8 col-md-6">
+                <div class="section-header-container container-centered">
+                    <h2 class="section-header">Om oss</h2>
                 </div>
             </div>
-            <div class="flex flex-row text-white">
-                <div class="h-60 w-80 m-20 hover:scale-105">
-                    <a href="#">
-                        <img class="object-cover h-full w-full " src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8">
-                        <div class="flex flex-col items-center justify-center">
-                            <div class="text-2xl text-white">
-                                Lorem Ipsum
-                            </div>
-                        </div>
-                    </a>
+            <div class="col-sm-2 col-md-3 hidden-xs">
+                <div class="header-img header-img-2"></div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- LEFT COLUMN-->
+            <div class="col-sm-6 grid-col">
+
+                <div class="about-us-box">
+                    <div class="about-us-box-wrapper">
+                        <h2 class="case-header-text">Neque porro quisquam est qui dolorem.</h2>
+                        <p class="case-body-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus leo porttitor metus ultrices, non facilisis felis imperdiet. Sed tincidunt nulla metus, in ultricies est mattis nec. 
+                        <br/><br/>
+                        Integer auctor euismod euismod. Praesent ultricies, sapien a ultricies venenatis, libero tortor maximus enim, et euismod purus tellus ac elit. Phasellus arcu ligula, sagittis ac purus nec, sollicitudin dignissim augue. Fusce at leo varius, commodo urna ut, suscipit nisi. Pellentesque dui dolor, gravida ut rutrum vel, suscipit non nisl. Quisque iaculis pharetra vulputate. Ut pulvinar urna id volutpat tempor. Proin sed eros turpis.
+                        <br/><br/>
+                        Vestibulum blandit, dolor vel placerat ultricies, risus ante placerat velit, volutpat venenatis neque mauris eget purus. Nulla et auctor turpis. Sed eu posuere leo.</p>
+
+                        <a href="#kontakt" class="external-link external-link-animation">Tincidunt tellus. Nullam et volutpat odio</a>
+                    </div>
                 </div>
-                <div class="h-60 w-80 m-20 hover:scale-105">
-                    <a href="#">
-                        <img class="object-cover h-full w-full " src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8">
-                        <div class="flex flex-col items-center justify-center">
-                            <div class="text-2xl text-white">
-                                Lorem Ipsum
-                            </div>
+
+                <div class="cell cell-type-featured">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img om-oss-img-1"></div>
                         </div>
-                    </a>
+                    </div>
                 </div>
+
+                <div class="cell cell-type-small">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img om-oss-img-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-small">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img om-oss-img-3"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN-->
+            <div class="col-sm-6 grid-col layout-offset border-top">
+
+                <div class="cell cell-type-featured">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img om-oss-img-4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-landscape">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img om-oss-img-5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-small-textbox">
+                    <div class="about-us-box">
+                        <div class="about-us-box-wrapper">
+                            <h2 class="case-header-text">Lorem Ipsum</h2>
+                                <ul class="case-body-text" style="text-align:left; line-height:20px;word-wrap: break-word;">
+                                    <li style="margin-bottom:10px;">Quisque nunc massa, convallis quis quam nec, malesuada blandit tortor</li>
+                                    <li style="margin-bottom:10px;">Sed elementum interdum lobortis</li>
+                                    <li style="margin-bottom:10px;">Fusce interdum mattis venenatis</li>
+                                    <li style="margin-bottom:10px;">Nullam dignissim cursus mauris. Nunc sit amet dolor ac arcu gravida porta vitae eu dui</li>
+                                    <li style="margin-bottom:10px;">Nulla a est tincidunt, ullamcorper elit dapibus</li>
+                                    <li style="margin-bottom:10px;">Nullam et volutpat odio</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell cell-type-featured">
+                    <div class="cell-content">
+                        <div class="case-img-container">
+                            <div class="case-img om-oss-img-6"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-    <section id="omoss">
-        <div class="relative flex flex-col items-center justify-center h-screen overflow-hidden bg-sky-900">
-            <div class="relative z-20 p-5 text-6xl text-white">
-                Om oss
+
+    <!-- CONTACT -->
+    <section id="kontakt" class="container-fluid section grid">
+
+        <div class="row section-header-row">
+            <div class="col-sm-2 col-md-3 hidden-xs">
+                <div class="header-img header-img-1"></div>
             </div>
-            <div class="flex flex-row text-white">
-                <div class="h-60 w-80 m-20">
-                    <ul class="list-disc text-lg">
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>Sed aliquet felis ut libero accumsan imperdiet. Aenean pulvinar id erat in sollicitudin.</li>
-                        <li>Nam tincidunt euismod lacus ut gravida.</li>
-                    </ul>
-                </div>
-                <div class="h-60 w-80 m-20">
-                    <img class="object-cover h-full w-full " src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8">
+            <div class="col-sm-8 col-md-6">
+                <div class="section-header-container container-centered">
+                    <h2 class="section-header">Kontakt</h2>
                 </div>
             </div>
-            <div class="relative flex flex-row items-center justify-center text-white">
-                <div class="h-60 w-80 m-20">
-                    <img class="object-cover h-full w-full " src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8">
-                </div>
-                <div class="relative h-60 w-80 m-20">
-                    <ul class="list-disc text-lg">
-                        <li>Kontakt</li>
-                        <li>Email: email@email.se</li>
-                        <li>Telefon: 070 000 00 00</li>
-                    </ul>
+            <div class="col-sm-2 col-md-3 hidden-xs">
+                <div class="header-img header-img-2"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 contact-office-box">
+                <h2 class="contact-office-header" style="margin-top: 15px;">Xref</h2>
+            </div>
+            <div class="col-sm-6 contact-office-box">
+                <p class="contact-office-info">Adress 11b</p>
+                <p class="contact-office-info">111 11 Stockholm</p>
+                <br/>
+                <p class="contact-office-info">08 00 00 00</p>
+                <p class="contact-office-info"><a href="mailto:info@xref.se">info@xref.se</a></p>
+                <div class="contact-social">
+                    <a href="https://se.linkedin.com/company/xref" class="icon-social icon-social-linkedin" target="_blank"></a>
+                    <a href="https://www.facebook.com/xref/" class="icon-social icon-social-facebook" target="_blank"></a>
+                    <a href="https://www.instagram.com/xref/" class="icon-social icon-social-instagram" target="_blank"></a>
                 </div>
             </div>
         </div>
+
+        <div class="row container-contacts">
+            <div class="contact-item">
+                <p>Fredrik</p>
+                <!-- <p>Högskoleingenjör</p> -->
+                <p>070 000 00 00</p>
+                <p><a href="mailto:fredrik@xref.se">fredrik@xref.se</a></p>
+            </div>
+            <div class="info-item">
+                <p>Är du vår nästa medarbetare?</p>
+                <p>Skicka din ansökan till <a href="mailto:fredrik@xref.se">fredrik@xref.se</a></p>
+            </div>
+            
+        </div>
     </section>
+
+
+
 </body>
 </html>
